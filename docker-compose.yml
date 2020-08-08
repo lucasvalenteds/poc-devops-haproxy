@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  server:
+    image: server:latest
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - 3000
+    environment:
+      - PORT=3000
+    networks:
+      - server-network
+
+  proxy:
+    image: dockercloud/haproxy:latest
+    ports:
+      - 8080:80
+    links:
+      - server
+    networks:
+      - server-network
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+networks:
+  server-network:
+    driver: bridge
