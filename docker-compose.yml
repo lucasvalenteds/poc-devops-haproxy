@@ -16,7 +16,7 @@ services:
   proxy:
     image: dockercloud/haproxy:latest
     ports:
-      - 8080:80
+      - 4000:80
     links:
       - server
     networks:

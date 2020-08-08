@@ -1,5 +1,5 @@
 SERVICE = server
-PROXY_URL = http://localhost:8080
+PROXY_URL = http://localhost:4000
 SCALE ?= 5
 
 up:
