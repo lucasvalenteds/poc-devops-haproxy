@@ -13,3 +13,8 @@ const server = HTTP.createServer((_, response) => {
 server
   .listen(port)
   .once("listening", () => Console.debug("Server running on port %d", port));
+
+Process.on("SIGTERM", () => {
+  Console.debug("Server stopped");
+  Process.exit(0);
+});
