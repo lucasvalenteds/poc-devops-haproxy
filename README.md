@@ -73,6 +73,11 @@ server_1  | Server running on port 3000
 
 ## Tests
 
+```
+processor      Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz
+memory         16GiB System memory
+```
+
 ### 2 containers
 
 ```
